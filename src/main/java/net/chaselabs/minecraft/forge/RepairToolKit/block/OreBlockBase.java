@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.block.Block.Properties;
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
@@ -54,7 +55,10 @@ public class OreBlockBase {
 		int index = 0;
 		for (FillerBlockType filler : dimension.getFillerBlock()) {
 			for (Biome biome : ForgeRegistries.BIOMES) {
-				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.func_225566_b_(new OreFeatureConfig(filler, blocks.get(index).getDefaultState(), chance)).func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(blocks_in_vein, min_height, 0, max_height))));
+				if (filler == FillerBlockType.NETHERRACK)
+					biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.func_225566_b_(new OreFeatureConfig(filler, blocks.get(index).getDefaultState(), chance)).func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(blocks_in_vein, min_height, 0, Minecraft.getInstance().world.getMaxHeight()))));
+				else
+					biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.func_225566_b_(new OreFeatureConfig(filler, blocks.get(index).getDefaultState(), chance)).func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(blocks_in_vein, min_height, 0, max_height))));
 			}
 			index++;
 		}
