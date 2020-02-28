@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.block.Block.Properties;
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
@@ -40,7 +39,7 @@ public class OreBlockBase {
 	 * @param max_height
 	 */
 	public OreBlockBase(String name, String displayName, Properties properties, OreGenDimension dimension, int chance, int blocks_in_vein, int min_height, int max_height) {
-		blocks = dimension == OreGenDimension.BOTH ? Arrays.asList(new BlockBase(name + "_overworld", displayName + " Overworld", properties), new BlockBase(name + "_nether", displayName + " Nether", properties)) : dimension == OreGenDimension.Overworld ? Arrays.asList(new BlockBase(name + "_overworld", displayName + " Overworld", properties)) : dimension == OreGenDimension.Nether ? Arrays.asList(new BlockBase(name + "_nether", displayName + " Nether", properties)) : null;
+		blocks = dimension == OreGenDimension.BOTH ? Arrays.asList(new BlockBase(name + "_overworld", displayName + " Overworld", properties), new BlockBase(name + "_nether", displayName + " Nether", properties)) : dimension == OreGenDimension.Overworld ? Arrays.asList(new BlockBase(name, displayName, properties)) : dimension == OreGenDimension.Nether ? Arrays.asList(new BlockBase(name, displayName, properties)) : null;
 
 		OreGeneration(blocks, dimension, chance, blocks_in_vein, min_height, max_height);
 	}
@@ -56,7 +55,7 @@ public class OreBlockBase {
 		for (FillerBlockType filler : dimension.getFillerBlock()) {
 			for (Biome biome : ForgeRegistries.BIOMES) {
 				if (filler == FillerBlockType.NETHERRACK)
-					biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.func_225566_b_(new OreFeatureConfig(filler, blocks.get(index).getDefaultState(), chance)).func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(blocks_in_vein, min_height, 0, Minecraft.getInstance().world.getMaxHeight()))));
+					biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.func_225566_b_(new OreFeatureConfig(filler, blocks.get(index).getDefaultState(), chance)).func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(blocks_in_vein, min_height, 0, 128))));
 				else
 					biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.func_225566_b_(new OreFeatureConfig(filler, blocks.get(index).getDefaultState(), chance)).func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(blocks_in_vein, min_height, 0, max_height))));
 			}
