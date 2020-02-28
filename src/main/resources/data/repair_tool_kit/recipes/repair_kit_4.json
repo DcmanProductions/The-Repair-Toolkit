@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BRB",
+        "RRR",
+        "BRB"
+    ],
+    "key": {
+        "B": {
+            "item": "repair_tool_kit:pizar_gem"
+        },
+        "R": {
+            "item": "repair_tool_kit:repair_kit_3"
+        }
+    },
+    "result": {
+        "item": "repair_tool_kit:repair_kit_4"
+    }
+}

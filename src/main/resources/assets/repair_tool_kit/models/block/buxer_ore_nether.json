@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "repair_tool_kit:block/buxer_ore_nether"
+    }
+}

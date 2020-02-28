@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "repair_tool_kit:item/repair_kit_4"
+    }
+}
