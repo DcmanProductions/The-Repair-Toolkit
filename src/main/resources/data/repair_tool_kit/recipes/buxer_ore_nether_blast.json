@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:blasting",
+    "ingredient": {
+      "item": "repair_tool_kit:buxer_ore_nether"
+    },
+    "result": "repair_tool_kit:buxer_ingot",
+    "experience": 1.7,
+    "cookingtime": 100
+  }

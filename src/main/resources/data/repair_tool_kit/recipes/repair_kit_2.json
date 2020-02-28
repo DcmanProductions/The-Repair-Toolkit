@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BRB",
+        "RRR",
+        "BRB"
+    ],
+    "key": {
+        "B": {
+            "item": "minecraft:obsidian"
+        },
+        "R": {
+            "item": "repair_tool_kit:repair_kit_1"
+        }
+    },
+    "result": {
+        "item": "repair_tool_kit:repair_kit_2"
+    }
+}

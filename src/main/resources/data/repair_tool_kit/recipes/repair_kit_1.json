@@ -1,0 +1,31 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BAB",
+        "PSs",
+        "BHB"
+    ],
+    "key": {
+        "B": {
+            "item": "repair_tool_kit:buxer_ingot"
+        },
+        "A": {
+            "item": "minecraft:iron_axe"
+        },
+        "P": {
+            "item": "minecraft:iron_pickaxe"
+        },
+        "S": {
+            "item": "minecraft:iron_sword"
+        },
+        "s": {
+            "item": "minecraft:iron_shovel"
+        },
+        "H": {
+            "item": "minecraft:iron_hoe"
+        }
+    },
+    "result": {
+        "item": "repair_tool_kit:repair_kit_1"
+    }
+}
